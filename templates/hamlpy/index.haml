@@ -1,0 +1,85 @@
+- extends 'base.html'
+- load staticfiles
+
+
+- block extra_head
+  = block.super
+  %meta{:content => "{{ settings.SITE_TITLE }}", :property => "og:title"}/
+  %meta{:content => "bc.py es una comunidad abierta de desarrolladores e interesados en las tecnologías alrededor del lenguaje de programación Python.", :property => "og:description"}/
+  %meta{:content => "{{ HOME_URL }}", :property => "og:url"}/
+  %meta{:content => "{{ HOME_URL }}{% static 'images/logo-200x200.png' %}", :property => "og:image"}/
+
+
+- block main
+  / Start Hero Slider
+  .hero-slider.flexslider.clearfix{"data-arrows" => "yes", "data-autoplay" => "yes", "data-pagination" => "yes", "data-pause" => "yes", "data-style" => "fade"}
+    %ul.slides
+      %li.parallax{:style => "background-image:url({% static 'images/mexicali-banner.jpg' %});"}
+      %li.parallax{:style => "background-image:url({% static 'images/tijuana-banner.jpg' %});"}
+      %li.parallax{:style => "background-image:url({% static 'images/pycon-2013.jpg' %});"}
+      %li.parallax{:style => "background-image:url({% static 'images/django-banner.jpg' %});"}
+  / End Hero Slider
+
+  / Start Notice Bar
+  / - render_home_notice_bar
+  / End Notice Bar
+
+  / Start Content
+  .main{:role => "main"}
+    #content.content.full
+      .container
+        .row
+          / Start Featured Blocks
+          .featured-blocks.clearfix
+            .col-md-4.col-sm-4.featured-block
+              %a.img-thumbnail{:href => "{% url 'page' 'curso-de-python' %}"}
+                %img{:alt => "curso", :src => "{% static 'images/curso-python.jpg' %}"}
+                  %strong Curso de Python
+                  %span.more leer m&aacute;s
+            .col-md-4.col-sm-4.featured-block
+              %a.img-thumbnail{:href => "https://plus.google.com/b/110948874951396867357/+GDGMexicaliORG/", :target => "_blank"}
+                %img{:alt => "GDG Mexicali", :src => "{% static 'images/gdg-mexicali-logo.jpg' %}"}
+                  %strong GDG Mexicali
+                  %span.more leer m&aacute;s
+            .col-md-4.col-sm-4.featured-block
+              %a.img-thumbnail{:href => "https://www.facebook.com/groups/pythonbc/", :target => "_blank"}
+                %img{:alt => "facebook/pythonbc", :src => "{% static 'images/facebook-group-pythonbc.png' %}"}
+                  %strong Únete al grupo
+                  %span.more unirse
+          / End Featured Blocks
+        .row
+          .col-md-8.col-sm-6
+            / Events Listing
+            .listing.events-listing
+              %header.listing-header
+                %h3 Pr&oacute;ximos Eventos
+              / Render next events at home
+              /- render_home_events
+            .spacer-30
+            / Latest News
+            .listing.post-listing
+              %header.listing-header
+                %h3 &Uacute;ltimas publicaciones
+              /- render_recent_posts
+          / Start Sidebar
+          .col-md-4.col-sm-6
+            / Latest Sermons
+            .listing.sermons-listing
+              %header.listing-header
+                %h3 Charlas Recientes
+              %section.listing-cont
+                /- render_recent_talks
+  / Start Featured Gallery
+  .featured-gallery
+    /
+      <div class="container">
+      <div class="row">
+      <div class="col-md-3 col-sm-3">
+      <h4>Updates from our gallery</h4>
+      <a href="#" class="btn btn-default btn-lg">More Galleries</a> </div>
+      <div class="col-md-3 col-sm-3 post format-image"> <a href="http://placehold.it/600x400&amp;amp;text=IMAGE+PLACEHOLDER" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="http://placehold.it/600x400&amp;amp;text=IMAGE+PLACEHOLDER" alt=""> </a> </div>
+      <div class="col-md-3 col-sm-3 post format-video"> <a href="http://youtu.be/NEFfnbQlGo8" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="http://placehold.it/600x400&amp;amp;text=IMAGE+PLACEHOLDER" alt=""> </a> </div>
+      <div class="col-md-3 col-sm-3 post format-image"> <a href="http://placehold.it/600x400&amp;amp;text=IMAGE+PLACEHOLDER" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="http://placehold.it/600x400&amp;amp;text=IMAGE+PLACEHOLDER" alt=""> </a> </div>
+      </div>
+      </div>
+  / End Featured Gallery

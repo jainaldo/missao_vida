@@ -1,0 +1,22 @@
+
+%nav.navigation
+  %ul.sf-menu
+    %li
+      %a{:href => "{{ HOME_URL }}"} Inicio
+    %li
+      %a{:href => "{% url 'page' 'sobre-a-missao' %}"} Sobre a missão
+    %li
+      %a{:href => "{% url 'blog_post_list' %}"} Blog
+    %li
+      %a{:href => "{% url 'page' 'eventos' %}"} Eventos
+    %li
+      %a{:href => ""} Videos
+      %ul.dropdown
+        %li
+          %a{:href => ""} Charlas / Talleres
+        %li
+          %a{:href => ""} Cursos
+    %li
+      %a{:href => "{% url 'page' 'galerias' %}"} Galleria
+    %li
+      %a{:href => "{% url 'page' 'contacto' %}"} Contacto

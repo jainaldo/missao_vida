@@ -1,0 +1,53 @@
+- load staticfiles
+!!!
+%html.no-js
+  %head
+    /Basic Page Needs
+    /==================================================
+    %title
+      -block meta_title
+        = settings.SITE_TITLE
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    %meta{:content => "{% block meta_description %}Comunidad de usuario de Python. Tutoriales, charlas, talleres y eventos.{% endblock %}", :name => "description"}
+    %meta{:content => "{% block meta_keywords %}python,django,mezzanine,jquery,developer{% endblock %}", :name => "keywords"}
+
+    /Mobile Specific Metas
+    /==================================================
+    %meta{:content => "width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0", :name => "viewport"}
+    %meta{:content => "telephone=no", :name => "format-detection"}
+    %link{:href => "{% static 'ico/favicon_missao.ico' %}", :rel => "icon"}
+
+    /CSS
+    /==================================================
+    %link{:href => "{% static 'css/bootstrap_theme.css' %}", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "{% static 'plugins/mediaelement/mediaelementplayer.css' %}", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "{% static 'css/style.css' %}", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "{% static 'plugins/prettyphoto/css/prettyPhoto.css' %}", :rel => "stylesheet", :type => "text/css"}
+    /[if lte IE 8] %link{:href => "css/ie8.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}
+
+    / Color Style
+    %link{:href => "{% static 'colors/color1.css' %}", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "{% static 'css/custom.css' %}", :rel => "stylesheet", :type => "text/css"}
+
+    /SCRIPTS
+    /==================================================
+    / Modernizr
+    %script{:src => "{% static 'js/modernizr.js' %}"}
+    - block extra_css
+    - block extra_head
+  %body
+    /[if lt IE 7]
+      %p.chromeframe
+        You are using an outdated browser.
+        %a{:href => "http://browsehappy.com/"} Upgrade your browser today
+        or
+        %a{:href => "http://www.google.com/chromeframe/?redirect=true"} install Google Chrome Frame
+        to better experience this site.
+
+
+    .body
+      - include 'includes/header.html'
+      - block main
+      - include 'includes/footer.html'
+      - include 'includes/footer_scripts.html'
+      - block extra_js

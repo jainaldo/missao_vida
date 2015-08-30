@@ -1,0 +1,53 @@
+- load staticfiles
+/ Start Footer
+%footer.site-footer
+  .container
+    .row
+      / Start Footer Widgets
+      .col-md-4.col-sm-4.widget.footer-widget
+        %h4.footer-widget-title Acerca de bc.py
+        %img{:alt => "Pythonbc logo", :src => "{% static 'images/logo-bcpy.png' %}"}
+        .spacer-20
+        %p
+          {{ FOOTER_MESSAGE }}
+        %p
+          %a{:href => "https://www.comodo.com/", :rel => "nofollow", :target => "_blank", :title => "sitio seguro norton"}
+            %img{:alt => "sitio seguro norton", :height => "31", :src => "{% static 'images/comodo.png' %}", :style => "margin-right:18px;", :title => "sitio seguro norton", :width => "103"}/
+          %a{:href => "https://lodyas.com/posicionamiento-de-paginas-web/?utm_source=pythonbc_com&amp;utm_medium=digital_partner&amp;utm_campaign=footer", :target => "_blank", :title => "Posicionamiento de paginas web"}
+            %img{:alt => "LODYAS - Digital Partner", :src => "//lodyas.com/media/lodyas-125-45-dp.png", :style => "margin-bottom:-9px;", :title => "LODYAS - Digital Partner"}/
+      .col-md-4.col-sm-4.widget.footer-widget
+        %h4.footer-widget-title Sitio
+        %ul
+          %li
+            %a{:href => "{{ HOME_URL }}"} Inicio
+          %li
+            %a{:href => "{% url 'page' 'acerca-de-pythonbc' %}"} Acerca de
+          %li
+            %a{:href => "{% url 'page' 'eventos' %}"} Eventos
+          %li
+            %a{:href => "{% url 'page' 'charlas-y-talleres' %}"} Chalras / Tallers
+          %li
+            %a{:href => "{% url 'page' 'cursos' %}"} Cursos
+          %li
+            %a{:href => "{% url 'blog_post_list' %}"} Nuestro Blog
+      .col-md-4.col-sm-4.widget.footer-widget
+        %h4.footer-widget-title @pythnbc en twitter
+        / - include 'twitter/tweets.html'
+%footer.site-footer-bottom
+  .container
+    .row
+      .copyrights-col-left.col-md-6.col-sm-6
+        %p &copy; 2014 bc.py. All Rights Reserved
+      .copyrights-col-right.col-md-6.col-sm-6
+        .social-icons
+          %a{:href => "https://www.facebook.com/pythonbc", :target => "_blank"}
+            %i.fa.fa-facebook
+          %a{:href => "https://twitter.com/PythonBC", :target => "_blank"}
+            %i.fa.fa-twitter
+          %a{:href => "https://plus.google.com/communities/114398253822426710031", :target => "_blank"}
+            %i.fa.fa-google-plus
+          %a{:href => "https://pythonbc.com/blog/feeds/rss/"}
+            %i.fa.fa-rss
+/ End Footer
+%a#back-to-top
+  %i.fa.fa-angle-double-up

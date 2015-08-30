@@ -1,0 +1,20 @@
+- load staticfiles
+/ Start Site Header
+%header.site-header
+  .topbar
+    .container
+      .row
+        .col-md-5.col-sm-5.col-xs-4
+        .col-md-2.col-sm-2.col-xs-4
+          %h1.logo
+            %a{:href => ""}
+              %img{:alt => "Programando Python en Español", :src => "{% static 'images/logo_missao2.png' %}"}/
+        .col-md-5.col-sm-5.col-xs-4
+          %a.visible-sm.visible-xs.menu-toggle{:href => "#"}
+            %i.fa.fa-bars
+  .main-menu-wrapper
+    .container
+      .row
+        .col-md-12
+          - include 'includes/navbar.html'
+/ End Site Header

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block extra_head %}
+  {{ block.super }}
+  <meta content='{{ settings.SITE_TITLE }}' property='og:title' />
+  <meta content='bc.py es una comunidad abierta de desarrolladores e interesados en las tecnologías alrededor del lenguaje de programación Python.' property='og:description' />
+  <meta content='{{ HOME_URL }}' property='og:url' />
+  <meta content='{{ HOME_URL }}{% static 'images/logo-200x200.png' %}' property='og:image' />
+
+
+{% endblock %}
+{% block main %}
+<!-- Start Hero Slider -->
+  <div class='hero-slider flexslider clearfix' data-style='fade' data-pause='yes' data-arrows='yes' data-pagination='yes' data-autoplay='yes'>
+    <ul class='slides'>
+      <li class='parallax' style='background-image:url({% static 'images/mexicali-banner.jpg' %});'></li>
+      <li class='parallax' style='background-image:url({% static 'images/tijuana-banner.jpg' %});'></li>
+      <li class='parallax' style='background-image:url({% static 'images/pycon-2013.jpg' %});'></li>
+      <li class='parallax' style='background-image:url({% static 'images/django-banner.jpg' %});'></li>
+    </ul>
+  </div>
+<!-- End Hero Slider -->
+<!-- Start Notice Bar -->
+<!-- - render_home_notice_bar -->
+<!-- End Notice Bar -->
+<!-- Start Content -->
+  <div class='main' role='main'>
+    <div id='content' class='content full'>
+      <div class='container'>
+        <div class='row'>
+<!-- Start Featured Blocks -->
+          <div class='featured-blocks clearfix'>
+            <div class='col-md-4 col-sm-4 featured-block'>
+              <a class='img-thumbnail' href='{% url 'page' 'curso-de-python' %}'>
+                <img src='{% static 'images/curso-python.jpg' %}' alt='curso' />                  <strong>Curso de Python</strong>
+                  <span class='more'>leer m&aacute;s</span>
+
+              </a>
+            </div>
+            <div class='col-md-4 col-sm-4 featured-block'>
+              <a class='img-thumbnail' href='https://plus.google.com/b/110948874951396867357/+GDGMexicaliORG/' target='_blank'>
+                <img src='{% static 'images/gdg-mexicali-logo.jpg' %}' alt='GDG Mexicali' />                  <strong>GDG Mexicali</strong>
+                  <span class='more'>leer m&aacute;s</span>
+
+              </a>
+            </div>
+            <div class='col-md-4 col-sm-4 featured-block'>
+              <a class='img-thumbnail' href='https://www.facebook.com/groups/pythonbc/' target='_blank'>
+                <img src='{% static 'images/facebook-group-pythonbc.png' %}' alt='facebook/pythonbc' />                  <strong>Únete al grupo</strong>
+                  <span class='more'>unirse</span>
+
+              </a>
+            </div>
+          </div>
+<!-- End Featured Blocks -->
+        </div>
+        <div class='row'>
+          <div class='col-md-8 col-sm-6'>
+<!-- Events Listing -->
+            <div class='listing events-listing'>
+              <header class='listing-header'>
+                <h3>Pr&oacute;ximos Eventos</h3>
+              </header>
+<!-- Render next events at home -->
+<!-- - render_home_events -->
+            </div>
+            <div class='spacer-30'></div>
+<!-- Latest News -->
+            <div class='listing post-listing'>
+              <header class='listing-header'>
+                <h3>&Uacute;ltimas publicaciones</h3>
+              </header>
+<!-- - render_recent_posts -->
+            </div>
+          </div>
+<!-- Start Sidebar -->
+          <div class='col-md-4 col-sm-6'>
+<!-- Latest Sermons -->
+            <div class='listing sermons-listing'>
+              <header class='listing-header'>
+                <h3>Charlas Recientes</h3>
+              </header>
+              <section class='listing-cont'>
+<!-- - render_recent_talks -->
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Start Featured Gallery -->
+  <div class='featured-gallery'>
+<!-- 
+      <div class="container">
+      <div class="row">
+      <div class="col-md-3 col-sm-3">
+      <h4>Updates from our gallery</h4>
+      <a href="#" class="btn btn-default btn-lg">More Galleries</a> </div>
+      <div class="col-md-3 col-sm-3 post format-image"> <a href="http://placehold.it/600x400&amp;amp;text=IMAGE+PLACEHOLDER" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="http://placehold.it/600x400&amp;amp;text=IMAGE+PLACEHOLDER" alt=""> </a> </div>
+      <div class="col-md-3 col-sm-3 post format-video"> <a href="http://youtu.be/NEFfnbQlGo8" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="http://placehold.it/600x400&amp;amp;text=IMAGE+PLACEHOLDER" alt=""> </a> </div>
+      <div class="col-md-3 col-sm-3 post format-image"> <a href="http://placehold.it/600x400&amp;amp;text=IMAGE+PLACEHOLDER" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="http://placehold.it/600x400&amp;amp;text=IMAGE+PLACEHOLDER" alt=""> </a> </div>
+      </div>
+      </div>
+-->
+  </div>
+<!-- End Featured Gallery -->
+{% endblock %}

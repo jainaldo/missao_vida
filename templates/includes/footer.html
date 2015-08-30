@@ -1,0 +1,81 @@
+{% load staticfiles %}
+<!-- Start Footer -->
+<footer class='site-footer'>
+  <div class='container'>
+    <div class='row'>
+<!-- Start Footer Widgets -->
+      <div class='col-md-4 col-sm-4 widget footer-widget'>
+        <h4 class='footer-widget-title'>Acerca de bc.py</h4>
+        <img src='{% static 'images/logo-bcpy.png' %}' alt='Pythonbc logo' />
+        <div class='spacer-20'></div>
+        <p>
+          {{ FOOTER_MESSAGE }}
+        </p>
+        <p>
+          <a href='https://www.comodo.com/' target='_blank' rel='nofollow' title='sitio seguro norton'>
+            <img src='{% static 'images/comodo.png' %}' style='margin-right:18px;' title='sitio seguro norton' height='31' width='103' alt='sitio seguro norton' />
+          </a>
+          <a href='https://lodyas.com/posicionamiento-de-paginas-web/?utm_source=pythonbc_com&amp;utm_medium=digital_partner&amp;utm_campaign=footer' target='_blank' title='Posicionamiento de paginas web'>
+            <img src='//lodyas.com/media/lodyas-125-45-dp.png' alt='LODYAS - Digital Partner' style='margin-bottom:-9px;' title='LODYAS - Digital Partner' />
+          </a>
+        </p>
+      </div>
+      <div class='col-md-4 col-sm-4 widget footer-widget'>
+        <h4 class='footer-widget-title'>Sitio</h4>
+        <ul>
+          <li>
+            <a href='{{ HOME_URL }}'>Inicio</a>
+          </li>
+          <li>
+            <a href='{% url 'page' 'acerca-de-pythonbc' %}'>Acerca de</a>
+          </li>
+          <li>
+            <a href='{% url 'page' 'eventos' %}'>Eventos</a>
+          </li>
+          <li>
+            <a href='{% url 'page' 'charlas-y-talleres' %}'>Chalras / Tallers</a>
+          </li>
+          <li>
+            <a href='{% url 'page' 'cursos' %}'>Cursos</a>
+          </li>
+          <li>
+            <a href='{% url 'blog_post_list' %}'>Nuestro Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class='col-md-4 col-sm-4 widget footer-widget'>
+        <h4 class='footer-widget-title'>@pythnbc en twitter</h4>
+<!-- - include 'twitter/tweets.html' -->
+      </div>
+    </div>
+  </div>
+</footer>
+<footer class='site-footer-bottom'>
+  <div class='container'>
+    <div class='row'>
+      <div class='copyrights-col-left col-md-6 col-sm-6'>
+        <p>&copy; 2014 bc.py. All Rights Reserved</p>
+      </div>
+      <div class='copyrights-col-right col-md-6 col-sm-6'>
+        <div class='social-icons'>
+          <a href='https://www.facebook.com/pythonbc' target='_blank'>
+            <i class='fa fa-facebook'></i>
+          </a>
+          <a href='https://twitter.com/PythonBC' target='_blank'>
+            <i class='fa fa-twitter'></i>
+          </a>
+          <a href='https://plus.google.com/communities/114398253822426710031' target='_blank'>
+            <i class='fa fa-google-plus'></i>
+          </a>
+          <a href='https://pythonbc.com/blog/feeds/rss/'>
+            <i class='fa fa-rss'></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer -->
+<a id='back-to-top'>
+  <i class='fa fa-angle-double-up'></i>
+</a>

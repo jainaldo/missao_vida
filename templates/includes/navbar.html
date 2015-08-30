@@ -1,0 +1,33 @@
+<nav class='navigation'>
+  <ul class='sf-menu'>
+    <li>
+      <a href='{{ HOME_URL }}'>Inicio</a>
+    </li>
+    <li>
+      <a href='{% url 'page' 'sobre-a-missao' %}'>Sobre a missão</a>
+    </li>
+    <li>
+      <a href='{% url 'blog_post_list' %}'>Blog</a>
+    </li>
+    <li>
+      <a href='{% url 'page' 'eventos' %}'>Eventos</a>
+    </li>
+    <li>
+      <a href=''>Videos</a>
+      <ul class='dropdown'>
+        <li>
+          <a href=''>Charlas / Talleres</a>
+        </li>
+        <li>
+          <a href=''>Cursos</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href='{% url 'page' 'galerias' %}'>Galleria</a>
+    </li>
+    <li>
+      <a href='{% url 'page' 'contacto' %}'>Contacto</a>
+    </li>
+  </ul>
+</nav>

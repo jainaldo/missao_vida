@@ -1,0 +1,47 @@
+- load staticfiles
+/ Jquery Library Call
+%script{:src => "{% static 'js/jquery-2.0.0.min.js' %}"}
+/ PrettyPhoto Plugin
+%script{:src => "{% static 'plugins/prettyphoto/js/prettyphoto.js' %}"}
+/ Plugins
+%script{:src => "{% static 'js/helper-plugins.js' %}"}
+/ UI
+%script{:src => "{% static 'js/bootstrap.js' %}"}
+/ Waypoints
+%script{:src => "{% static 'js/waypoints.js' %}"}
+/ MediaElements
+%script{:src => "{% static 'plugins/mediaelement/mediaelement-and-player.min.js' %}"}
+/ All Scripts
+%script{:src => "{% static 'js/init.js' %}"}
+/ FlexSlider
+%script{:src => "{% static 'plugins/flexslider/js/jquery.flexslider.js' %}"}
+/ Jquery Timer
+%script{:src => "{% static 'plugins/countdown/js/jquery.countdown.min.js' %}"}
+
+:javascript
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17634639-83']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+/ g+
+%script{:src => "https://apis.google.com/js/plusone.js", :type => "text/javascript"}
+
+/ twitter
+:javascript
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+/ Facebook
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=117140091760566";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
